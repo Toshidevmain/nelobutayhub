@@ -1,0 +1,51 @@
+entrypoint = "index.js"
+modules = ["nodejs-22"]
+hidden = [".config", "package-lock.json"]
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", "package.json", "package-lock.json"]
+
+[nix]
+channel = "stable-24_11"
+
+[deployment]
+run = ["npm", "start"]
+deploymentTarget = "autoscale"
+ignorePorts = false
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm start"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[userenv]
+
+[userenv.shared]
+ADMIN_EMAIL = "toshidev0@gmail.com"

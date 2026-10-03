@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#09090b" />
+  <title>Sign in — Nelo Butay</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/tailwind.css" />
+</head>
+<body class="min-h-screen bg-zinc-950 font-sans text-zinc-100 antialiased">
+  <main class="mx-auto flex min-h-screen max-w-xl flex-col items-center justify-center px-5 py-10">
+    <p id="auth-error" role="alert" class="mb-4 hidden w-full rounded-xl border border-rose-400/20 bg-rose-400/5 px-4 py-3 text-sm text-rose-200"></p>
+    <div id="auth-widget" class="w-full"></div>
+    <a href="/" class="mt-6 rounded-lg px-4 py-2 text-sm text-zinc-500 transition hover:text-zinc-200">Back to videos</a>
+  </main>
+  <script type="module" src="/auth-app.js"></script>
+</body>
+</html>

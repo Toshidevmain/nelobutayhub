@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    min-width: 320px;
+    background: #09090b;
+  }
+
+  button,
+  a,
+  input {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid #818cf8;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.cl-socialButtonsBlockButton {
+  color: #e4e4e7 !important;
+  background: #09090b !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+.cl-socialButtonsBlockButtonText {
+  color: #e4e4e7 !important;
+  opacity: 1 !important;
+}
+
+.cl-formFieldLabel {
+  color: #d4d4d8 !important;
+}
+
+.cl-formFieldInput {
+  color: #f4f4f5 !important;
+  background: #09090b !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+.cl-footerActionText,
+.cl-dividerText {
+  color: #a1a1aa !important;
+}
+
+.cl-footerActionLink {
+  color: #a5b4fc !important;
+}
